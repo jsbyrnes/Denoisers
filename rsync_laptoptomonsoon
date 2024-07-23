@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -avr --delete /Users/jsb474/Research/denoising/ jsb474@dtn1.hpc.nau.edu:/scratch/jsb474/denoising/

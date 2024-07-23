@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -avru jsb474@rain.hpc.nau.edu:/scratch/jsb474/denoising/ /Users/jsb474/Research/denoising/
