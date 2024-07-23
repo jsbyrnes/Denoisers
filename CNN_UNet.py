@@ -11,6 +11,7 @@ from scipy import signal
 import warnings
 warnings.filterwarnings('ignore')
 
+"""
 # Positional Encoding class
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, max_len=128):
@@ -42,6 +43,7 @@ class CustomTransformer(nn.Module):
         output = self.transformer_encoder(input_tensor)
         output = self.linear(output)
         return output
+"""
 
 class UNetv1(nn.Module):
     def __init__(self, drop=0.1, ncomp=1, fac=1):
@@ -137,16 +139,16 @@ class UNetv1(nn.Module):
         enc5b = self.drop5b(F.elu(self.bn5b(self.conv5b(enc5))))
 
         #bottleneck
-        v = enc5b.squeeze()
+        #v = enc5b.squeeze()
 
         #correction for nbatch = 1
-        if len(v.shape)==2:
-            v = v.unsqueeze(0)
+        #if len(v.shape)==2:
+        #    v = v.unsqueeze(0)
 
-        transformed = self.transformer(torch.permute(v, [0, 2, 1 ]))
-        transformed = torch.permute(transformed, [0, 2, 1]).unsqueeze(2)
+        #transformed = self.transformer(torch.permute(v, [0, 2, 1 ]))
+        #transformed = torch.permute(transformed, [0, 2, 1]).unsqueeze(2)
 
-        dec4 = F.elu(self.bn4u(self.upconv4(transformed)))
+        dec4 = F.elu(self.bn4u(self.upconv4(enc5b)))
         dec4 = torch.cat([dec4, enc4b], dim=1)
         dec4 = F.elu(self.bn4u2(self.conv4u(dec4)))
         
@@ -277,7 +279,7 @@ def getsnr(trace):
 
 def format_OBS(nlen, min_snr):
 
-    chunks = 100
+    chunks = 10000
 
     ind = 0
 
@@ -288,8 +290,8 @@ def format_OBS(nlen, min_snr):
 
     data_vec = np.array(())
 
-    #while ind < total:
-    while ind < 1500:
+    while ind < total:
+    #while ind < 1500:
 
         if ind + chunks < total:
             wf_vec_chunk  = data.get_waveforms(np.arange(ind, ind + chunks), sampling_rate=50)[:,0:3,:]
@@ -370,7 +372,7 @@ norm_input=True # leave this alone
 print_interval = 25  # Print every x batches
 cmap='PuRd'
 
-np.random.seed(3)
+np.random.seed(3) #same seed as used during training for an in-house check
 torch.manual_seed(3)
 
 #for later plotting
@@ -389,7 +391,7 @@ data_vec, noise_vec = format_OBS(nlen, 10)
 nsize = data_vec.shape[0]
 print(str(nsize) + ' signal traces passed snr threshold')
 print(str(noise_vec.shape[0]) + ' noise traces passed length threshold')
-val_size = int(0.1 * nsize)  # 5% for validation
+val_size = int(0.1 * nsize)  # 10% for validation
 train_size = nsize - val_size
 
 dataset = MyDataset(data_vector_1=data_vec, data_vector_2=noise_vec, nlen=nlen, nperseg=nperseg)
@@ -504,14 +506,14 @@ if train:
         val_hist = np.append(val_hist, val_loss)
 
         #save current model
-        torch.save(model.state_dict(), 'model_test-CNN_UNetT_fac' + str(fac) + model_v + '.pt')
+        torch.save(model.state_dict(), 'model_test-CNN_UNet_fac' + str(fac) + model_v + '.pt')
 
         if scheduler.get_last_lr()[0] < 1e-6:
             print('Learning rate reduce below minimum')
             break
 
     print('Finished Training')
-    np.save('CNN_UnetT_fac' + str(fac), np.vstack( (training_hist, val_hist) ))
+    np.save('CNN_Unet_fac' + str(fac), np.vstack( (training_hist, val_hist) ))
     
 
 """ 
