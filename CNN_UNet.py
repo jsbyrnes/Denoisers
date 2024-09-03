@@ -8,6 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seisbench.data as sbd
 from scipy import signal
+import pandas as pd
+import h5py
+import os
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -89,7 +93,7 @@ class UNetv1(nn.Module):
         self.bn5b = nn.BatchNorm2d(128 * fac)
         self.drop5b = nn.Dropout(drop)
 
-        self.transformer = CustomTransformer(128 * fac, num_layers=3, num_heads=2, hidden_dim=128 * fac, dropout=drop)
+        #self.transformer = CustomTransformer(128 * fac, num_layers=3, num_heads=2, hidden_dim=128 * fac, dropout=drop)
 
         self.upconv4 = nn.ConvTranspose2d(128 * fac, 64 * fac, kernel_size=3, stride=2, padding=1, output_padding=1)
         self.bn4u = nn.BatchNorm2d(64 * fac)
@@ -138,6 +142,7 @@ class UNetv1(nn.Module):
         enc5 = F.elu(self.bn5(self.conv5(enc4b)))
         enc5b = self.drop5b(F.elu(self.bn5b(self.conv5b(enc5))))
 
+        #just an experiment
         #bottleneck
         #v = enc5b.squeeze()
 
@@ -203,7 +208,7 @@ class MyDataset(Dataset):
     def __getitem__(self, idx):
         vector_1 = self.data_vector_1[idx]
 
-        start_d = int(np.random.randint(low=0, high=self.nlen/2))
+        start_d = int(np.random.randint(low=0, high=self.nlen))
 
         vector_1 = vector_1[:, start_d:start_d+self.nlen]
 
@@ -217,14 +222,14 @@ class MyDataset(Dataset):
         
         amp2 = np.random.uniform(0.1,2)*(-1)**np.random.randint(low=1, high=10) # could still be tiny
         
-        start = int(np.random.randint(low=0, high=self.nlen/2))
+        start = int(np.random.randint(low=0, high=self.nlen))
 
         vector_2 = vector_2[:, start:start+self.nlen]
 
         vector_1 *= amp
         vector_2 *= amp2
 
-        #This is probably the bottleneck
+        #This is probably the computational bottleneck
         stftsig1 = torch.stft(vector_1[0,:], nperseg, hop_length=1, window=self.window, return_complex=True)
         stftnoise1 = torch.stft(vector_2[0,:], nperseg, hop_length=1, window=self.window, return_complex=True)
         stftinput1 = stftsig1+stftnoise1
@@ -350,6 +355,137 @@ def format_OBS(nlen, min_snr):
 
     return data_vec, noise_vec
 
+def load_csv_metadata(folder_path):
+    # Initialize an empty list to store DataFrames
+    metadata_frames = []
+
+    # Loop over all files in the folder
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.csv'):
+            file_path = os.path.join(folder_path, file_name)
+            # Read each CSV file into a DataFrame
+            df = pd.read_csv(file_path)
+            metadata_frames.append(df)
+
+    # Concatenate all DataFrames into a single DataFrame
+    metadata_df = pd.concat(metadata_frames, ignore_index=True)
+    return metadata_df
+
+def load_hdf5_data(folder_path):
+    data_list = []
+
+    # Loop over all files in the folder
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.hdf5'):
+            file_path = os.path.join(folder_path, file_name)
+            with h5py.File(file_path, 'r') as hdf:
+                # Recursively explore all datasets in the file
+                def recursively_load_datasets(hdf_group):
+                    for key in hdf_group.keys():
+                        item = hdf_group[key]
+                        if isinstance(item, h5py.Dataset):
+                            data_list.append(item[...])  # Append dataset data
+                        elif isinstance(item, h5py.Group):
+                            recursively_load_datasets(item)  # Recursively explore groups
+
+                recursively_load_datasets(hdf)
+            break
+
+    # Stack the data arrays along the first axis
+    combined_array = np.stack(data_list, axis=0)
+    return combined_array
+
+def format_Langseth_manual(nlen):
+    print("Function started.")
+
+    path = './'
+    metadata_df = load_csv_metadata(path)  # Assuming metadata is still needed
+    data = load_hdf5_data(path)
+
+    data = data[1::2, 0:3, :]  # Extracting odd-indexed samples and remove hydrophone
+
+    # Pick index is fixed at 2000
+    itp = 2000
+
+    # Calculate the index for noise (middle section of the noise)
+    ix = np.round((itp - 2 * nlen) / 2).astype(int)
+
+    # Extract noise and data chunks based on the indices
+    noise_vec = data[:, :, ix:ix + 2 * nlen]
+    data_vec = data[:, :, (itp - nlen):(itp + nlen)]
+
+    # Normalize across all components for each 3C set
+    noise_amp = np.max(np.abs(noise_vec), axis=(1, 2), keepdims=True)
+    data_amp = np.max(np.abs(data_vec), axis=(1, 2), keepdims=True)
+
+    # Apply the normalization to all components together
+    noise_vec = noise_vec / noise_amp
+    data_vec = data_vec / data_amp
+
+    print("Function completed.")
+
+    return data_vec, noise_vec
+
+def plot_validation_samples(valbatch, model, nperseg, epoch, t, f, cmap='PuRd'):
+    num_examples = 3  # Number of examples to plot
+    
+    plt.figure(figsize=(15, num_examples * 3))
+
+    for i in range(num_examples):
+        mask = model(valbatch['combined'][i,:,:,:].unsqueeze(0)).detach().numpy()[0,0,:,:]
+        mask_true = valbatch['mask'][i,0,:,:]
+        trace = valbatch['combined'][i,0,:,:] + valbatch['combined'][i,1,:,:]*1j
+
+        trace_in = torch.istft(trace, nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
+        trace_pred = torch.istft(trace * mask, nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
+        trace_true = torch.istft(trace * mask_true, nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
+
+        amp = np.max(np.abs(trace_in))
+
+        # Plot Input Data
+        plt.subplot(num_examples, 4, 4 * i + 1)
+        plt.plot(t, trace_in)
+        plt.ylim([-amp * 1.2, amp * 1.2])
+        #plt.grid()
+        if i == 0:
+            plt.title("Input Data")
+        plt.xlabel('Time (s)')
+        plt.gca().axes.yaxis.set_visible(False)
+
+        # Plot Recovered vs Target Data
+        plt.subplot(num_examples, 4, 4 * i + 2)
+        plt.plot(t, trace_true, 'k', label='Target')
+        plt.plot(t, trace_pred, 'r', label='Recovered')
+        plt.ylim([-amp * 1.2, amp * 1.2])
+        #plt.grid()
+        if i == 0:
+            plt.title("Recovered vs Target Data")
+            plt.legend()
+        plt.xlabel('Time (s)')
+        plt.gca().axes.yaxis.set_visible(False)
+
+        # Plot True Mask
+        plt.subplot(num_examples, 4, 4 * i + 3)
+        plt.pcolormesh(t, f, mask_true, cmap=cmap, vmin=0, vmax=1, shading='auto')
+        if i == 0:
+            plt.title("True Mask")
+        plt.xlabel('Time (s)')
+        plt.ylabel('Frequency (Hz)')
+
+        # Plot Recovered Mask
+        plt.subplot(num_examples, 4, 4 * i + 4)
+        plt.pcolormesh(t, f, mask, cmap=cmap, vmin=0, vmax=1, shading='auto')
+        if i == 0:
+            plt.title("Recovered Mask")
+        plt.xlabel('Time (s)')
+        plt.gca().axes.yaxis.set_visible(False)
+
+    # Save figures
+    plt.tight_layout()
+    plt.savefig(f'Validation_sample_epoch_{epoch}.png')
+    plt.close()
+    plt.close()
+
 # Hyperparameters
 
 model_type = 'UNet'
@@ -361,7 +497,7 @@ learning_rate = 0.001
 num_epochs = 100  # Default to 3 epochs
 num_components = 3
 hidden_dim = 1024*num_components #transformer only
-sr = 50
+sr = 200
 fac = 1# model size
 eps = 1e-9 # epsilon
 drop=0.0 # model drop rate
@@ -386,7 +522,7 @@ model = model.float()
 
 print('Constructing the dataset')
 #data_vec, noise_vec, itp_vec = format_OBST()
-data_vec, noise_vec = format_OBS(nlen, 10)
+data_vec, noise_vec = format_Langseth_manual(nlen)
 
 nsize = data_vec.shape[0]
 print(str(nsize) + ' signal traces passed snr threshold')
@@ -394,24 +530,38 @@ print(str(noise_vec.shape[0]) + ' noise traces passed length threshold')
 val_size = int(0.1 * nsize)  # 10% for validation
 train_size = nsize - val_size
 
-dataset = MyDataset(data_vector_1=data_vec, data_vector_2=noise_vec, nlen=nlen, nperseg=nperseg)
+# First, split the noise samples
+noise_size = noise_vec.shape[0]
+val_noise_size = int(0.1 * noise_size)  # 10% for validation
+train_noise_size = noise_size - val_noise_size
 
-train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+train_noise_vec, val_noise_vec = random_split(noise_vec, [train_noise_size, val_noise_size])
 
-dataloader_train = DataLoader(train_dataset, batch_size = 32, shuffle=True)
-dataloader_valid = DataLoader(val_dataset, batch_size = 32, shuffle=False) 
+# Now split the signal samples as before
+nsize = data_vec.shape[0]
+val_size = int(0.1 * nsize)  # 10% for validation
+train_size = nsize - val_size
 
-for batch in dataloader_valid: #for plotting
+train_signal_vec, val_signal_vec = random_split(data_vec, [train_size, val_size])
+
+# Create datasets with corresponding signal and noise
+train_dataset = MyDataset(data_vector_1=train_signal_vec, data_vector_2=train_noise_vec, nlen=nlen, nperseg=nperseg)
+val_dataset = MyDataset(data_vector_1=val_signal_vec, data_vector_2=val_noise_vec, nlen=nlen, nperseg=nperseg)
+
+# Create DataLoaders
+dataloader_train = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+dataloader_valid = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+
+for batch in dataloader_valid:  # for plotting
     valbatch = batch
     break
 
 criterion = nn.L1Loss() #nn.L1Loss(), nn.MSELoss()
 
 training_hist = np.array([])
-val_hist      = np.array([])
+val_hist = np.array([])
 
 if train:
-
     # Define loss function and optimizer
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.25, patience=5, eps=1e-8, threshold=0.00001)
@@ -421,101 +571,71 @@ if train:
         running_loss = 0.0
         batch_count = 0  # Counter for batches
 
-        #This step is slow. But hardly the bottle-neck compared with training. Do more batches if too slow, data is heavily augmented.
-        print('-----> Epochs# ' + str(epoch+1))
+        print('-----> Epochs# ' + str(epoch + 1))
         model.train()
 
         for batch in dataloader_train:
-            n = batch['combined'].shape[0]
-
             optimizer.zero_grad()
-            
             out = model(batch['combined'])
-
             loss = criterion(out, batch['mask'])
-
             loss.backward()
             optimizer.step()
 
-            #running_loss = (running_loss*batch_count + loss.item())/(batch_count + 1)
             running_loss += loss.item()
-
-            batch_count += 1  # Increment batch counter
+            batch_count += 1
 
             if batch_count % print_interval == 0:  # Print every `print_interval` batches
-                print(f'Epoch {epoch + 1}, Batch {batch_count}, Loss: {(running_loss/batch_count):.5f}')
+                print(f'Epoch {epoch + 1}, Batch {batch_count}, Loss: {(running_loss / batch_count):.5f}')
 
-        #validation loss
+        # Average training loss for this epoch
+        avg_training_loss = running_loss / batch_count
+
+        # Validation loss
         model.eval()
-
         val_loss = 0.0
-        c = 0
+        val_batch_count = 0
 
-        for batch in dataloader_valid:
+        with torch.no_grad():
+            for batch in dataloader_valid:
+                out = model(batch['combined'])
+                loss = criterion(out, batch['mask'])
+                val_loss += loss.item()
+                val_batch_count += 1
 
-            out = model(batch['combined'])
-            loss = criterion(out, batch['mask'])
+        avg_val_loss = val_loss / val_batch_count
 
-            val_loss += loss.item()
-            c += 1
+        # Plot validation samples
+        plot_validation_samples(valbatch, model, nperseg, epoch, t, f, cmap='viridis')
 
-        val_loss /= c
+        # Step the scheduler based on validation loss
+        scheduler.step(avg_val_loss)
+        print(f'--> Validation loss: {avg_val_loss:.5f}; learning rate {scheduler.get_last_lr()[0]}')
 
-        #trace_in = np.zeros(10, nlen)
-        #trace_pred = np.zeros(10, nlen)
-        #trace_true = np.zeros(10, nlen)
+        # Append losses to history
+        training_hist = np.append(training_hist, avg_training_loss)
+        val_hist = np.append(val_hist, avg_val_loss)
 
-        #for k in range(10):
-        mask = model(valbatch['combined'][0,:,:,:].unsqueeze(0)).detach().numpy()[0,0,:,:]
-        mask_true = valbatch['mask'][0,0,:,:]
-        trace = valbatch['combined'][0,0,:,:] + valbatch['combined'][0,1,:,:]*1j
-
-        trace_in = torch.istft(trace,nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
-        trace_pred = torch.istft(trace*mask,nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
-        trace_true = torch.istft(trace*mask_true,nperseg, hop_length=1, window=torch.hann_window(nperseg)).detach().numpy()
-
-        amp = np.max(np.abs(trace_in))
-
-        plt.figure()
-        plt.subplot(211)
-        plt.plot(t, trace_in)
-        plt.ylim([ -amp*1.2, amp*1.2 ])
-        plt.grid()
-        plt.subplot(212)
-        plt.plot(t, trace_true, 'k')
-        plt.plot(t, trace_pred, 'r')
-        plt.ylim([ -amp*1.2, amp*1.2 ])
-        plt.grid()
-        plt.savefig('Validation_sample.png')
-        plt.close()
-
-        if model_v == 'v1':
-
-            plt.figure()
-            plt.subplot(211)
-            plt.pcolormesh(t, f, mask_true, cmap=cmap, vmin=0, vmax=1, shading='auto')
-            plt.subplot(212)
-            plt.pcolormesh(t, f, mask, cmap=cmap, vmin=0, vmax=1, shading='auto')
-            plt.savefig('Validation_SampleMask.png')
-            plt.close()
-
-        scheduler.step(val_loss)
-        print(f'--> Validation loss: {val_loss:.5f}; learning rate {scheduler.get_last_lr()[0]}')
-
-        training_hist = np.append(training_hist, running_loss)
-        val_hist = np.append(val_hist, val_loss)
-
-        #save current model
-        torch.save(model.state_dict(), 'model_test-CNN_UNet_fac' + str(fac) + model_v + '.pt')
+        # Save current model
+        torch.save(model.state_dict(), f'model_test-CNN_UNet_fac{fac}{model_v}.pt')
 
         if scheduler.get_last_lr()[0] < 1e-6:
-            print('Learning rate reduce below minimum')
+            print('Learning rate reduced below minimum')
             break
 
     print('Finished Training')
-    np.save('CNN_Unet_fac' + str(fac), np.vstack( (training_hist, val_hist) ))
-    
+    np.save(f'CNN_Unet_fac{fac}', np.vstack((training_hist, val_hist)))
 
+# Plotting training and validation loss
+plt.figure(figsize=(10, 5))
+plt.plot(training_hist, label='Training Loss')
+plt.plot(val_hist, label='Validation Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Training and Validation Loss')
+plt.legend()
+plt.grid(True)
+plt.show()
+    
 """ 
 def stft_3comp_data_generator(model, batch_size, data_vec, noise_vec, itpvec, sr, nperseg, noverlap, norm_input, eps=1e-9, nlen=128, valid=False, post=False):
     #data is a data set from the seisbench plateform. Pretty handy.
