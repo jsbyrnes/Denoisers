@@ -1,0 +1,1142 @@
+Using device: cuda
+CUDA Device: Tesla V100-SXM2-16GB
+CUDA Memory Allocated: 0.00 GB
+CUDA Memory Cached: 0.00 GB
+Constructing the dataset
+Training dataset size: 670464
+Validation dataset size: 78592
+Test dataset size: 40192
+Dataset initialization time: 5.26 seconds
+############ building model Branch_Encoder_DecoderY22_110324_fac1 ############
+Model initialization time: 1.98 seconds
+Parameters: 111370
+Fetching a batch from validation DataLoader for plotting.
+-----> Epoch# 1, Learning Rate: 0.000100
+Epoch 1/200 - Total Time: 259.51 seconds
+  Load Time: 39.14 seconds (15.08%)
+  Transfer Time: 11.12 seconds (4.28%)
+  Runtime (model training): 209.26 seconds (80.64%)
+  Average Running Loss: 0.1950
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1325
+-----> Epoch# 2, Learning Rate: 0.000280
+Epoch 2/200 - Total Time: 265.40 seconds
+  Load Time: 43.87 seconds (16.53%)
+  Transfer Time: 11.11 seconds (4.19%)
+  Runtime (model training): 210.42 seconds (79.29%)
+  Average Running Loss: 0.1301
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1187
+-----> Epoch# 3, Learning Rate: 0.000460
+Epoch 3/200 - Total Time: 276.11 seconds
+  Load Time: 50.49 seconds (18.29%)
+  Transfer Time: 10.92 seconds (3.96%)
+  Runtime (model training): 214.70 seconds (77.76%)
+  Average Running Loss: 0.1199
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1136
+-----> Epoch# 4, Learning Rate: 0.000640
+Epoch 4/200 - Total Time: 261.95 seconds
+  Load Time: 36.57 seconds (13.96%)
+  Transfer Time: 11.89 seconds (4.54%)
+  Runtime (model training): 213.49 seconds (81.50%)
+  Average Running Loss: 0.1135
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1131
+-----> Epoch# 5, Learning Rate: 0.000820
+Epoch 5/200 - Total Time: 270.67 seconds
+  Load Time: 45.63 seconds (16.86%)
+  Transfer Time: 11.10 seconds (4.10%)
+  Runtime (model training): 213.94 seconds (79.04%)
+  Average Running Loss: 0.1082
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1054
+-----> Epoch# 6, Learning Rate: 0.001000
+Epoch 6/200 - Total Time: 274.87 seconds
+  Load Time: 44.84 seconds (16.31%)
+  Transfer Time: 11.44 seconds (4.16%)
+  Runtime (model training): 218.60 seconds (79.53%)
+  Average Running Loss: 0.1037
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1028
+-----> Epoch# 7, Learning Rate: 0.001000
+Epoch 7/200 - Total Time: 276.80 seconds
+  Load Time: 50.43 seconds (18.22%)
+  Transfer Time: 11.61 seconds (4.19%)
+  Runtime (model training): 214.76 seconds (77.59%)
+  Average Running Loss: 0.1008
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0998
+-----> Epoch# 8, Learning Rate: 0.001000
+Epoch 8/200 - Total Time: 269.04 seconds
+  Load Time: 45.26 seconds (16.82%)
+  Transfer Time: 11.31 seconds (4.20%)
+  Runtime (model training): 212.47 seconds (78.97%)
+  Average Running Loss: 0.0983
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0987
+-----> Epoch# 9, Learning Rate: 0.001000
+Epoch 9/200 - Total Time: 270.12 seconds
+  Load Time: 52.95 seconds (19.60%)
+  Transfer Time: 11.06 seconds (4.09%)
+  Runtime (model training): 206.11 seconds (76.30%)
+  Average Running Loss: 0.0969
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0987
+-----> Epoch# 10, Learning Rate: 0.001000
+Epoch 10/200 - Total Time: 278.32 seconds
+  Load Time: 51.76 seconds (18.60%)
+  Transfer Time: 11.28 seconds (4.05%)
+  Runtime (model training): 215.29 seconds (77.35%)
+  Average Running Loss: 0.0957
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0980
+-----> Epoch# 11, Learning Rate: 0.001000
+Epoch 11/200 - Total Time: 285.33 seconds
+  Load Time: 61.02 seconds (21.39%)
+  Transfer Time: 11.18 seconds (3.92%)
+  Runtime (model training): 213.13 seconds (74.70%)
+  Average Running Loss: 0.0950
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0951
+-----> Epoch# 12, Learning Rate: 0.001000
+Epoch 12/200 - Total Time: 275.00 seconds
+  Load Time: 49.57 seconds (18.03%)
+  Transfer Time: 11.65 seconds (4.24%)
+  Runtime (model training): 213.78 seconds (77.74%)
+  Average Running Loss: 0.0945
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0954
+-----> Epoch# 13, Learning Rate: 0.001000
+Epoch 13/200 - Total Time: 273.03 seconds
+  Load Time: 44.17 seconds (16.18%)
+  Transfer Time: 11.64 seconds (4.26%)
+  Runtime (model training): 217.22 seconds (79.56%)
+  Average Running Loss: 0.0940
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0983
+-----> Epoch# 14, Learning Rate: 0.001000
+Epoch 14/200 - Total Time: 282.01 seconds
+  Load Time: 49.12 seconds (17.42%)
+  Transfer Time: 12.28 seconds (4.35%)
+  Runtime (model training): 220.61 seconds (78.23%)
+  Average Running Loss: 0.0935
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0957
+-----> Epoch# 15, Learning Rate: 0.001000
+Epoch 15/200 - Total Time: 282.72 seconds
+  Load Time: 49.81 seconds (17.62%)
+  Transfer Time: 11.29 seconds (4.00%)
+  Runtime (model training): 221.62 seconds (78.39%)
+  Average Running Loss: 0.0931
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0954
+-----> Epoch# 16, Learning Rate: 0.001000
+Epoch 16/200 - Total Time: 276.26 seconds
+  Load Time: 43.72 seconds (15.83%)
+  Transfer Time: 11.58 seconds (4.19%)
+  Runtime (model training): 220.96 seconds (79.98%)
+  Average Running Loss: 0.0928
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0960
+-----> Epoch# 17, Learning Rate: 0.001000
+Epoch 17/200 - Total Time: 269.27 seconds
+  Load Time: 53.21 seconds (19.76%)
+  Transfer Time: 11.10 seconds (4.12%)
+  Runtime (model training): 204.96 seconds (76.12%)
+  Average Running Loss: 0.0924
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0925
+-----> Epoch# 18, Learning Rate: 0.001000
+Epoch 18/200 - Total Time: 276.45 seconds
+  Load Time: 50.84 seconds (18.39%)
+  Transfer Time: 11.77 seconds (4.26%)
+  Runtime (model training): 213.84 seconds (77.35%)
+  Average Running Loss: 0.0921
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0921
+-----> Epoch# 19, Learning Rate: 0.001000
+Epoch 19/200 - Total Time: 287.74 seconds
+  Load Time: 62.58 seconds (21.75%)
+  Transfer Time: 11.59 seconds (4.03%)
+  Runtime (model training): 213.58 seconds (74.22%)
+  Average Running Loss: 0.0919
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0989
+-----> Epoch# 20, Learning Rate: 0.001000
+Epoch 20/200 - Total Time: 278.28 seconds
+  Load Time: 47.96 seconds (17.24%)
+  Transfer Time: 12.08 seconds (4.34%)
+  Runtime (model training): 218.24 seconds (78.42%)
+  Average Running Loss: 0.0917
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0920
+-----> Epoch# 21, Learning Rate: 0.001000
+Epoch 21/200 - Total Time: 267.08 seconds
+  Load Time: 47.29 seconds (17.71%)
+  Transfer Time: 11.75 seconds (4.40%)
+  Runtime (model training): 208.04 seconds (77.90%)
+  Average Running Loss: 0.0916
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0915
+-----> Epoch# 22, Learning Rate: 0.001000
+Epoch 22/200 - Total Time: 273.72 seconds
+  Load Time: 47.38 seconds (17.31%)
+  Transfer Time: 11.95 seconds (4.36%)
+  Runtime (model training): 214.40 seconds (78.33%)
+  Average Running Loss: 0.0913
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0951
+-----> Epoch# 23, Learning Rate: 0.001000
+Epoch 23/200 - Total Time: 279.27 seconds
+  Load Time: 49.17 seconds (17.61%)
+  Transfer Time: 11.50 seconds (4.12%)
+  Runtime (model training): 218.60 seconds (78.28%)
+  Average Running Loss: 0.0913
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1012
+-----> Epoch# 24, Learning Rate: 0.001000
+Epoch 24/200 - Total Time: 280.54 seconds
+  Load Time: 48.58 seconds (17.32%)
+  Transfer Time: 11.01 seconds (3.92%)
+  Runtime (model training): 220.95 seconds (78.76%)
+  Average Running Loss: 0.0910
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0954
+-----> Epoch# 25, Learning Rate: 0.001000
+Epoch 25/200 - Total Time: 278.37 seconds
+  Load Time: 49.70 seconds (17.85%)
+  Transfer Time: 11.64 seconds (4.18%)
+  Runtime (model training): 217.03 seconds (77.97%)
+  Average Running Loss: 0.0910
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0916
+-----> Epoch# 26, Learning Rate: 0.001000
+Epoch 26/200 - Total Time: 269.11 seconds
+  Load Time: 53.99 seconds (20.06%)
+  Transfer Time: 11.27 seconds (4.19%)
+  Runtime (model training): 203.85 seconds (75.75%)
+  Average Running Loss: 0.0908
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1008
+-----> Epoch# 27, Learning Rate: 0.001000
+Epoch 27/200 - Total Time: 282.16 seconds
+  Load Time: 60.12 seconds (21.31%)
+  Transfer Time: 11.28 seconds (4.00%)
+  Runtime (model training): 210.76 seconds (74.70%)
+  Average Running Loss: 0.0907
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0933
+-----> Epoch# 28, Learning Rate: 0.001000
+Epoch 28/200 - Total Time: 281.46 seconds
+  Load Time: 51.67 seconds (18.36%)
+  Transfer Time: 11.56 seconds (4.11%)
+  Runtime (model training): 218.23 seconds (77.53%)
+  Average Running Loss: 0.0907
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0957
+-----> Epoch# 29, Learning Rate: 0.001000
+Epoch 29/200 - Total Time: 273.52 seconds
+  Load Time: 47.54 seconds (17.38%)
+  Transfer Time: 11.47 seconds (4.19%)
+  Runtime (model training): 214.52 seconds (78.43%)
+  Average Running Loss: 0.0905
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0917
+-----> Epoch# 30, Learning Rate: 0.001000
+Epoch 30/200 - Total Time: 272.26 seconds
+  Load Time: 50.08 seconds (18.39%)
+  Transfer Time: 11.09 seconds (4.07%)
+  Runtime (model training): 211.09 seconds (77.53%)
+  Average Running Loss: 0.0904
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0952
+-----> Epoch# 31, Learning Rate: 0.001000
+Epoch 31/200 - Total Time: 282.99 seconds
+  Load Time: 57.88 seconds (20.45%)
+  Transfer Time: 11.07 seconds (3.91%)
+  Runtime (model training): 214.04 seconds (75.63%)
+  Average Running Loss: 0.0904
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0941
+-----> Epoch# 32, Learning Rate: 0.001000
+Epoch 32/200 - Total Time: 288.97 seconds
+  Load Time: 51.73 seconds (17.90%)
+  Transfer Time: 12.75 seconds (4.41%)
+  Runtime (model training): 224.49 seconds (77.69%)
+  Average Running Loss: 0.0903
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0942
+-----> Epoch# 33, Learning Rate: 0.000250
+Epoch 33/200 - Total Time: 279.58 seconds
+  Load Time: 50.06 seconds (17.90%)
+  Transfer Time: 11.78 seconds (4.21%)
+  Runtime (model training): 217.74 seconds (77.88%)
+  Average Running Loss: 0.0896
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0890
+-----> Epoch# 34, Learning Rate: 0.000250
+Epoch 34/200 - Total Time: 268.74 seconds
+  Load Time: 49.70 seconds (18.49%)
+  Transfer Time: 11.34 seconds (4.22%)
+  Runtime (model training): 207.69 seconds (77.28%)
+  Average Running Loss: 0.0894
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0891
+-----> Epoch# 35, Learning Rate: 0.000250
+Epoch 35/200 - Total Time: 278.57 seconds
+  Load Time: 48.62 seconds (17.45%)
+  Transfer Time: 11.50 seconds (4.13%)
+  Runtime (model training): 218.45 seconds (78.42%)
+  Average Running Loss: 0.0894
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0889
+-----> Epoch# 36, Learning Rate: 0.000250
+Epoch 36/200 - Total Time: 283.89 seconds
+  Load Time: 46.62 seconds (16.42%)
+  Transfer Time: 12.12 seconds (4.27%)
+  Runtime (model training): 225.16 seconds (79.31%)
+  Average Running Loss: 0.0892
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0890
+-----> Epoch# 37, Learning Rate: 0.000250
+Epoch 37/200 - Total Time: 280.38 seconds
+  Load Time: 58.94 seconds (21.02%)
+  Transfer Time: 11.41 seconds (4.07%)
+  Runtime (model training): 210.03 seconds (74.91%)
+  Average Running Loss: 0.0893
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0893
+-----> Epoch# 38, Learning Rate: 0.000250
+Epoch 38/200 - Total Time: 268.32 seconds
+  Load Time: 49.19 seconds (18.33%)
+  Transfer Time: 11.45 seconds (4.27%)
+  Runtime (model training): 207.69 seconds (77.40%)
+  Average Running Loss: 0.0893
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0889
+-----> Epoch# 39, Learning Rate: 0.000250
+Epoch 39/200 - Total Time: 271.16 seconds
+  Load Time: 47.42 seconds (17.49%)
+  Transfer Time: 11.11 seconds (4.10%)
+  Runtime (model training): 212.63 seconds (78.41%)
+  Average Running Loss: 0.0893
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0892
+-----> Epoch# 40, Learning Rate: 0.000250
+Epoch 40/200 - Total Time: 285.95 seconds
+  Load Time: 68.26 seconds (23.87%)
+  Transfer Time: 11.52 seconds (4.03%)
+  Runtime (model training): 206.16 seconds (72.10%)
+  Average Running Loss: 0.0893
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0904
+-----> Epoch# 41, Learning Rate: 0.000250
+Epoch 41/200 - Total Time: 288.01 seconds
+  Load Time: 59.50 seconds (20.66%)
+  Transfer Time: 11.03 seconds (3.83%)
+  Runtime (model training): 217.48 seconds (75.51%)
+  Average Running Loss: 0.0892
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0900
+-----> Epoch# 42, Learning Rate: 0.000250
+Epoch 42/200 - Total Time: 270.92 seconds
+  Load Time: 54.31 seconds (20.05%)
+  Transfer Time: 11.15 seconds (4.12%)
+  Runtime (model training): 205.45 seconds (75.84%)
+  Average Running Loss: 0.0891
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0895
+-----> Epoch# 43, Learning Rate: 0.000250
+Epoch 43/200 - Total Time: 273.56 seconds
+  Load Time: 46.73 seconds (17.08%)
+  Transfer Time: 10.92 seconds (3.99%)
+  Runtime (model training): 215.91 seconds (78.92%)
+  Average Running Loss: 0.0892
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0895
+-----> Epoch# 44, Learning Rate: 0.000250
+Epoch 44/200 - Total Time: 278.37 seconds
+  Load Time: 54.86 seconds (19.71%)
+  Transfer Time: 11.29 seconds (4.06%)
+  Runtime (model training): 212.21 seconds (76.23%)
+  Average Running Loss: 0.0892
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0894
+-----> Epoch# 45, Learning Rate: 0.000063
+Epoch 45/200 - Total Time: 289.10 seconds
+  Load Time: 65.37 seconds (22.61%)
+  Transfer Time: 11.86 seconds (4.10%)
+  Runtime (model training): 211.87 seconds (73.29%)
+  Average Running Loss: 0.0890
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0884
+-----> Epoch# 46, Learning Rate: 0.000063
+Epoch 46/200 - Total Time: 270.74 seconds
+  Load Time: 53.88 seconds (19.90%)
+  Transfer Time: 11.15 seconds (4.12%)
+  Runtime (model training): 205.71 seconds (75.98%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 47, Learning Rate: 0.000063
+Epoch 47/200 - Total Time: 264.79 seconds
+  Load Time: 47.54 seconds (17.95%)
+  Transfer Time: 11.34 seconds (4.28%)
+  Runtime (model training): 205.92 seconds (77.77%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 48, Learning Rate: 0.000063
+Epoch 48/200 - Total Time: 276.48 seconds
+  Load Time: 47.19 seconds (17.07%)
+  Transfer Time: 11.05 seconds (4.00%)
+  Runtime (model training): 218.24 seconds (78.93%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 49, Learning Rate: 0.000063
+Epoch 49/200 - Total Time: 283.93 seconds
+  Load Time: 51.94 seconds (18.29%)
+  Transfer Time: 11.60 seconds (4.08%)
+  Runtime (model training): 220.39 seconds (77.62%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 50, Learning Rate: 0.000063
+Epoch 50/200 - Total Time: 274.23 seconds
+  Load Time: 50.95 seconds (18.58%)
+  Transfer Time: 11.69 seconds (4.26%)
+  Runtime (model training): 211.59 seconds (77.16%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 51, Learning Rate: 0.000063
+Epoch 51/200 - Total Time: 270.72 seconds
+  Load Time: 45.09 seconds (16.66%)
+  Transfer Time: 11.05 seconds (4.08%)
+  Runtime (model training): 214.58 seconds (79.26%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 52, Learning Rate: 0.000063
+Epoch 52/200 - Total Time: 276.84 seconds
+  Load Time: 48.82 seconds (17.63%)
+  Transfer Time: 12.55 seconds (4.53%)
+  Runtime (model training): 215.47 seconds (77.83%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 53, Learning Rate: 0.000063
+Epoch 53/200 - Total Time: 291.98 seconds
+  Load Time: 53.13 seconds (18.20%)
+  Transfer Time: 12.32 seconds (4.22%)
+  Runtime (model training): 226.52 seconds (77.58%)
+  Average Running Loss: 0.0890
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 54, Learning Rate: 0.000063
+Epoch 54/200 - Total Time: 279.59 seconds
+  Load Time: 62.19 seconds (22.24%)
+  Transfer Time: 11.50 seconds (4.11%)
+  Runtime (model training): 205.90 seconds (73.64%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 55, Learning Rate: 0.000063
+Epoch 55/200 - Total Time: 279.30 seconds
+  Load Time: 53.86 seconds (19.28%)
+  Transfer Time: 11.85 seconds (4.24%)
+  Runtime (model training): 213.59 seconds (76.47%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 56, Learning Rate: 0.000016
+Epoch 56/200 - Total Time: 283.74 seconds
+  Load Time: 56.28 seconds (19.83%)
+  Transfer Time: 11.67 seconds (4.11%)
+  Runtime (model training): 215.79 seconds (76.05%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 57, Learning Rate: 0.000016
+Epoch 57/200 - Total Time: 296.20 seconds
+  Load Time: 80.84 seconds (27.29%)
+  Transfer Time: 11.21 seconds (3.78%)
+  Runtime (model training): 204.16 seconds (68.92%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 58, Learning Rate: 0.000016
+Epoch 58/200 - Total Time: 282.22 seconds
+  Load Time: 57.20 seconds (20.27%)
+  Transfer Time: 11.21 seconds (3.97%)
+  Runtime (model training): 213.81 seconds (75.76%)
+  Average Running Loss: 0.0887
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 59, Learning Rate: 0.000016
+Epoch 59/200 - Total Time: 272.86 seconds
+  Load Time: 49.54 seconds (18.15%)
+  Transfer Time: 11.33 seconds (4.15%)
+  Runtime (model training): 211.99 seconds (77.69%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 60, Learning Rate: 0.000016
+Epoch 60/200 - Total Time: 272.11 seconds
+  Load Time: 53.91 seconds (19.81%)
+  Transfer Time: 11.19 seconds (4.11%)
+  Runtime (model training): 207.01 seconds (76.08%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 61, Learning Rate: 0.000016
+Epoch 61/200 - Total Time: 290.53 seconds
+  Load Time: 65.64 seconds (22.59%)
+  Transfer Time: 11.87 seconds (4.09%)
+  Runtime (model training): 213.02 seconds (73.32%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 62, Learning Rate: 0.000016
+Epoch 62/200 - Total Time: 283.26 seconds
+  Load Time: 58.24 seconds (20.56%)
+  Transfer Time: 11.95 seconds (4.22%)
+  Runtime (model training): 213.07 seconds (75.22%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 63, Learning Rate: 0.000016
+Epoch 63/200 - Total Time: 274.86 seconds
+  Load Time: 46.76 seconds (17.01%)
+  Transfer Time: 11.64 seconds (4.23%)
+  Runtime (model training): 216.46 seconds (78.75%)
+  Average Running Loss: 0.0889
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 64, Learning Rate: 0.000016
+Epoch 64/200 - Total Time: 270.19 seconds
+  Load Time: 48.03 seconds (17.78%)
+  Transfer Time: 11.35 seconds (4.20%)
+  Runtime (model training): 210.81 seconds (78.02%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 65, Learning Rate: 0.000016
+Epoch 65/200 - Total Time: 284.71 seconds
+  Load Time: 61.43 seconds (21.58%)
+  Transfer Time: 11.41 seconds (4.01%)
+  Runtime (model training): 211.87 seconds (74.42%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0883
+-----> Epoch# 66, Learning Rate: 0.000016
+Epoch 66/200 - Total Time: 283.42 seconds
+  Load Time: 52.48 seconds (18.52%)
+  Transfer Time: 11.76 seconds (4.15%)
+  Runtime (model training): 219.18 seconds (77.33%)
+  Average Running Loss: 0.0887
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 67, Learning Rate: 0.000016
+Epoch 67/200 - Total Time: 274.59 seconds
+  Load Time: 49.10 seconds (17.88%)
+  Transfer Time: 11.23 seconds (4.09%)
+  Runtime (model training): 214.26 seconds (78.03%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 68, Learning Rate: 0.000016
+Epoch 68/200 - Total Time: 275.34 seconds
+  Load Time: 54.38 seconds (19.75%)
+  Transfer Time: 11.12 seconds (4.04%)
+  Runtime (model training): 209.84 seconds (76.21%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+-----> Epoch# 69, Learning Rate: 0.000016
+Epoch 69/200 - Total Time: 288.10 seconds
+  Load Time: 55.47 seconds (19.26%)
+  Transfer Time: 11.84 seconds (4.11%)
+  Runtime (model training): 220.79 seconds (76.63%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0882
+-----> Epoch# 70, Learning Rate: 0.000016
+Epoch 70/200 - Total Time: 288.06 seconds
+  Load Time: 64.50 seconds (22.39%)
+  Transfer Time: 11.92 seconds (4.14%)
+  Runtime (model training): 211.64 seconds (73.47%)
+  Average Running Loss: 0.0888
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0881
+Learning rate reduced below minimum
+--> Test loss: 0.0884
+Using device: cuda
+CUDA Device: Tesla V100-SXM2-16GB
+CUDA Memory Allocated: 0.00 GB
+CUDA Memory Cached: 0.00 GB
+Constructing the dataset
+Training dataset size: 670464
+Validation dataset size: 78592
+Test dataset size: 40192
+Dataset initialization time: 0.55 seconds
+############ building model Branch_Encoder_DecoderY22_110324_fac2 ############
+Model initialization time: 2.33 seconds
+Parameters: 439938
+Fetching a batch from validation DataLoader for plotting.
+-----> Epoch# 1, Learning Rate: 0.000100
+Epoch 1/200 - Total Time: 323.16 seconds
+  Load Time: 17.13 seconds (5.30%)
+  Transfer Time: 9.91 seconds (3.07%)
+  Runtime (model training): 296.11 seconds (91.63%)
+  Average Running Loss: 0.1684
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1235
+-----> Epoch# 2, Learning Rate: 0.000280
+Epoch 2/200 - Total Time: 319.36 seconds
+  Load Time: 16.55 seconds (5.18%)
+  Transfer Time: 10.11 seconds (3.17%)
+  Runtime (model training): 292.70 seconds (91.65%)
+  Average Running Loss: 0.1179
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1131
+-----> Epoch# 3, Learning Rate: 0.000460
+Epoch 3/200 - Total Time: 322.67 seconds
+  Load Time: 16.21 seconds (5.02%)
+  Transfer Time: 10.43 seconds (3.23%)
+  Runtime (model training): 296.04 seconds (91.75%)
+  Average Running Loss: 0.1150
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1090
+-----> Epoch# 4, Learning Rate: 0.000640
+Epoch 4/200 - Total Time: 325.76 seconds
+  Load Time: 17.58 seconds (5.40%)
+  Transfer Time: 10.38 seconds (3.19%)
+  Runtime (model training): 297.80 seconds (91.42%)
+  Average Running Loss: 0.1089
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1058
+-----> Epoch# 5, Learning Rate: 0.000820
+Epoch 5/200 - Total Time: 318.92 seconds
+  Load Time: 15.76 seconds (4.94%)
+  Transfer Time: 10.32 seconds (3.24%)
+  Runtime (model training): 292.84 seconds (91.82%)
+  Average Running Loss: 0.1072
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1034
+-----> Epoch# 6, Learning Rate: 0.001000
+Epoch 6/200 - Total Time: 320.68 seconds
+  Load Time: 15.78 seconds (4.92%)
+  Transfer Time: 10.33 seconds (3.22%)
+  Runtime (model training): 294.57 seconds (91.86%)
+  Average Running Loss: 0.1002
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0976
+-----> Epoch# 7, Learning Rate: 0.001000
+Epoch 7/200 - Total Time: 315.77 seconds
+  Load Time: 15.26 seconds (4.83%)
+  Transfer Time: 10.08 seconds (3.19%)
+  Runtime (model training): 290.42 seconds (91.97%)
+  Average Running Loss: 0.0969
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0948
+-----> Epoch# 8, Learning Rate: 0.001000
+Epoch 8/200 - Total Time: 318.48 seconds
+  Load Time: 14.25 seconds (4.47%)
+  Transfer Time: 10.40 seconds (3.27%)
+  Runtime (model training): 293.83 seconds (92.26%)
+  Average Running Loss: 0.0948
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0939
+-----> Epoch# 9, Learning Rate: 0.001000
+Epoch 9/200 - Total Time: 319.81 seconds
+  Load Time: 15.97 seconds (4.99%)
+  Transfer Time: 10.56 seconds (3.30%)
+  Runtime (model training): 293.28 seconds (91.71%)
+  Average Running Loss: 0.0930
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0925
+-----> Epoch# 10, Learning Rate: 0.001000
+Epoch 10/200 - Total Time: 318.20 seconds
+  Load Time: 16.11 seconds (5.06%)
+  Transfer Time: 10.56 seconds (3.32%)
+  Runtime (model training): 291.52 seconds (91.62%)
+  Average Running Loss: 0.0918
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0933
+-----> Epoch# 11, Learning Rate: 0.001000
+Epoch 11/200 - Total Time: 318.44 seconds
+  Load Time: 16.08 seconds (5.05%)
+  Transfer Time: 10.11 seconds (3.18%)
+  Runtime (model training): 292.24 seconds (91.77%)
+  Average Running Loss: 0.0909
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0912
+-----> Epoch# 12, Learning Rate: 0.001000
+Epoch 12/200 - Total Time: 320.66 seconds
+  Load Time: 15.33 seconds (4.78%)
+  Transfer Time: 10.34 seconds (3.23%)
+  Runtime (model training): 294.99 seconds (91.99%)
+  Average Running Loss: 0.0900
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0906
+-----> Epoch# 13, Learning Rate: 0.001000
+Epoch 13/200 - Total Time: 322.84 seconds
+  Load Time: 17.02 seconds (5.27%)
+  Transfer Time: 10.50 seconds (3.25%)
+  Runtime (model training): 295.32 seconds (91.48%)
+  Average Running Loss: 0.0893
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0932
+-----> Epoch# 14, Learning Rate: 0.001000
+Epoch 14/200 - Total Time: 323.22 seconds
+  Load Time: 18.96 seconds (5.86%)
+  Transfer Time: 10.55 seconds (3.26%)
+  Runtime (model training): 293.71 seconds (90.87%)
+  Average Running Loss: 0.0887
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0904
+-----> Epoch# 15, Learning Rate: 0.001000
+Epoch 15/200 - Total Time: 315.06 seconds
+  Load Time: 20.31 seconds (6.45%)
+  Transfer Time: 9.94 seconds (3.15%)
+  Runtime (model training): 284.80 seconds (90.40%)
+  Average Running Loss: 0.0882
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0876
+-----> Epoch# 16, Learning Rate: 0.001000
+Epoch 16/200 - Total Time: 311.42 seconds
+  Load Time: 15.30 seconds (4.91%)
+  Transfer Time: 9.83 seconds (3.16%)
+  Runtime (model training): 286.29 seconds (91.93%)
+  Average Running Loss: 0.0879
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0905
+-----> Epoch# 17, Learning Rate: 0.001000
+Epoch 17/200 - Total Time: 320.83 seconds
+  Load Time: 16.76 seconds (5.22%)
+  Transfer Time: 10.15 seconds (3.17%)
+  Runtime (model training): 293.91 seconds (91.61%)
+  Average Running Loss: 0.0875
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0893
+-----> Epoch# 18, Learning Rate: 0.001000
+Epoch 18/200 - Total Time: 319.00 seconds
+  Load Time: 15.98 seconds (5.01%)
+  Transfer Time: 10.10 seconds (3.17%)
+  Runtime (model training): 292.92 seconds (91.82%)
+  Average Running Loss: 0.0872
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0889
+-----> Epoch# 19, Learning Rate: 0.001000
+Epoch 19/200 - Total Time: 318.49 seconds
+  Load Time: 16.06 seconds (5.04%)
+  Transfer Time: 10.63 seconds (3.34%)
+  Runtime (model training): 291.80 seconds (91.62%)
+  Average Running Loss: 0.0870
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.1029
+-----> Epoch# 20, Learning Rate: 0.001000
+Epoch 20/200 - Total Time: 317.47 seconds
+  Load Time: 15.92 seconds (5.02%)
+  Transfer Time: 10.04 seconds (3.16%)
+  Runtime (model training): 291.50 seconds (91.82%)
+  Average Running Loss: 0.0868
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0892
+-----> Epoch# 21, Learning Rate: 0.001000
+Epoch 21/200 - Total Time: 319.08 seconds
+  Load Time: 16.21 seconds (5.08%)
+  Transfer Time: 10.32 seconds (3.23%)
+  Runtime (model training): 292.55 seconds (91.69%)
+  Average Running Loss: 0.0866
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0869
+-----> Epoch# 22, Learning Rate: 0.001000
+Epoch 22/200 - Total Time: 316.91 seconds
+  Load Time: 15.44 seconds (4.87%)
+  Transfer Time: 10.10 seconds (3.19%)
+  Runtime (model training): 291.37 seconds (91.94%)
+  Average Running Loss: 0.0864
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0871
+-----> Epoch# 23, Learning Rate: 0.001000
+Epoch 23/200 - Total Time: 313.94 seconds
+  Load Time: 14.91 seconds (4.75%)
+  Transfer Time: 10.12 seconds (3.22%)
+  Runtime (model training): 288.91 seconds (92.03%)
+  Average Running Loss: 0.0863
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0866
+-----> Epoch# 24, Learning Rate: 0.001000
+Epoch 24/200 - Total Time: 316.98 seconds
+  Load Time: 15.81 seconds (4.99%)
+  Transfer Time: 9.93 seconds (3.13%)
+  Runtime (model training): 291.24 seconds (91.88%)
+  Average Running Loss: 0.0861
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0872
+-----> Epoch# 25, Learning Rate: 0.001000
+Epoch 25/200 - Total Time: 319.63 seconds
+  Load Time: 16.07 seconds (5.03%)
+  Transfer Time: 10.22 seconds (3.20%)
+  Runtime (model training): 293.34 seconds (91.77%)
+  Average Running Loss: 0.0860
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0874
+-----> Epoch# 26, Learning Rate: 0.001000
+Epoch 26/200 - Total Time: 322.93 seconds
+  Load Time: 15.52 seconds (4.81%)
+  Transfer Time: 10.46 seconds (3.24%)
+  Runtime (model training): 296.95 seconds (91.95%)
+  Average Running Loss: 0.0858
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0858
+-----> Epoch# 27, Learning Rate: 0.001000
+Epoch 27/200 - Total Time: 321.14 seconds
+  Load Time: 15.84 seconds (4.93%)
+  Transfer Time: 10.44 seconds (3.25%)
+  Runtime (model training): 294.86 seconds (91.81%)
+  Average Running Loss: 0.0857
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0864
+-----> Epoch# 28, Learning Rate: 0.001000
+Epoch 28/200 - Total Time: 319.42 seconds
+  Load Time: 16.63 seconds (5.21%)
+  Transfer Time: 10.03 seconds (3.14%)
+  Runtime (model training): 292.76 seconds (91.65%)
+  Average Running Loss: 0.0857
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0862
+-----> Epoch# 29, Learning Rate: 0.001000
+Epoch 29/200 - Total Time: 319.68 seconds
+  Load Time: 15.69 seconds (4.91%)
+  Transfer Time: 10.33 seconds (3.23%)
+  Runtime (model training): 293.67 seconds (91.86%)
+  Average Running Loss: 0.0854
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0862
+-----> Epoch# 30, Learning Rate: 0.001000
+Epoch 30/200 - Total Time: 318.59 seconds
+  Load Time: 14.90 seconds (4.68%)
+  Transfer Time: 10.22 seconds (3.21%)
+  Runtime (model training): 293.48 seconds (92.12%)
+  Average Running Loss: 0.0853
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0871
+-----> Epoch# 31, Learning Rate: 0.001000
+Epoch 31/200 - Total Time: 320.14 seconds
+  Load Time: 16.40 seconds (5.12%)
+  Transfer Time: 10.13 seconds (3.17%)
+  Runtime (model training): 293.60 seconds (91.71%)
+  Average Running Loss: 0.0853
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0859
+-----> Epoch# 32, Learning Rate: 0.001000
+Epoch 32/200 - Total Time: 316.60 seconds
+  Load Time: 15.74 seconds (4.97%)
+  Transfer Time: 10.04 seconds (3.17%)
+  Runtime (model training): 290.82 seconds (91.86%)
+  Average Running Loss: 0.0852
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0865
+-----> Epoch# 33, Learning Rate: 0.001000
+Epoch 33/200 - Total Time: 315.63 seconds
+  Load Time: 15.83 seconds (5.02%)
+  Transfer Time: 10.61 seconds (3.36%)
+  Runtime (model training): 289.19 seconds (91.62%)
+  Average Running Loss: 0.0852
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0863
+-----> Epoch# 34, Learning Rate: 0.001000
+Epoch 34/200 - Total Time: 319.58 seconds
+  Load Time: 16.68 seconds (5.22%)
+  Transfer Time: 10.30 seconds (3.22%)
+  Runtime (model training): 292.61 seconds (91.56%)
+  Average Running Loss: 0.0850
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0876
+-----> Epoch# 35, Learning Rate: 0.000250
+Epoch 35/200 - Total Time: 322.12 seconds
+  Load Time: 15.88 seconds (4.93%)
+  Transfer Time: 10.57 seconds (3.28%)
+  Runtime (model training): 295.67 seconds (91.79%)
+  Average Running Loss: 0.0841
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0837
+-----> Epoch# 36, Learning Rate: 0.000250
+Epoch 36/200 - Total Time: 324.15 seconds
+  Load Time: 16.45 seconds (5.07%)
+  Transfer Time: 10.21 seconds (3.15%)
+  Runtime (model training): 297.49 seconds (91.78%)
+  Average Running Loss: 0.0839
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0833
+-----> Epoch# 37, Learning Rate: 0.000250
+Epoch 37/200 - Total Time: 319.77 seconds
+  Load Time: 17.80 seconds (5.57%)
+  Transfer Time: 10.30 seconds (3.22%)
+  Runtime (model training): 291.68 seconds (91.21%)
+  Average Running Loss: 0.0839
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0842
+-----> Epoch# 38, Learning Rate: 0.000250
+Epoch 38/200 - Total Time: 318.18 seconds
+  Load Time: 15.74 seconds (4.95%)
+  Transfer Time: 10.27 seconds (3.23%)
+  Runtime (model training): 292.17 seconds (91.83%)
+  Average Running Loss: 0.0838
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0838
+-----> Epoch# 39, Learning Rate: 0.000250
+Epoch 39/200 - Total Time: 319.25 seconds
+  Load Time: 15.43 seconds (4.83%)
+  Transfer Time: 10.46 seconds (3.28%)
+  Runtime (model training): 293.36 seconds (91.89%)
+  Average Running Loss: 0.0838
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0834
+-----> Epoch# 40, Learning Rate: 0.000250
+Epoch 40/200 - Total Time: 317.02 seconds
+  Load Time: 14.86 seconds (4.69%)
+  Transfer Time: 10.21 seconds (3.22%)
+  Runtime (model training): 291.95 seconds (92.09%)
+  Average Running Loss: 0.0838
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0833
+-----> Epoch# 41, Learning Rate: 0.000250
+Epoch 41/200 - Total Time: 318.89 seconds
+  Load Time: 16.44 seconds (5.16%)
+  Transfer Time: 10.00 seconds (3.14%)
+  Runtime (model training): 292.44 seconds (91.71%)
+  Average Running Loss: 0.0837
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0831
+-----> Epoch# 42, Learning Rate: 0.000250
+Epoch 42/200 - Total Time: 319.98 seconds
+  Load Time: 17.15 seconds (5.36%)
+  Transfer Time: 10.10 seconds (3.16%)
+  Runtime (model training): 292.73 seconds (91.48%)
+  Average Running Loss: 0.0837
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0834
+-----> Epoch# 43, Learning Rate: 0.000250
+Epoch 43/200 - Total Time: 323.54 seconds
+  Load Time: 17.76 seconds (5.49%)
+  Transfer Time: 10.36 seconds (3.20%)
+  Runtime (model training): 295.41 seconds (91.31%)
+  Average Running Loss: 0.0837
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0831
+-----> Epoch# 44, Learning Rate: 0.000250
+Epoch 44/200 - Total Time: 321.52 seconds
+  Load Time: 16.88 seconds (5.25%)
+  Transfer Time: 10.72 seconds (3.33%)
+  Runtime (model training): 293.93 seconds (91.42%)
+  Average Running Loss: 0.0837
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0833
+-----> Epoch# 45, Learning Rate: 0.000250
+Epoch 45/200 - Total Time: 322.13 seconds
+  Load Time: 16.07 seconds (4.99%)
+  Transfer Time: 10.42 seconds (3.24%)
+  Runtime (model training): 295.64 seconds (91.78%)
+  Average Running Loss: 0.0836
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0833
+-----> Epoch# 46, Learning Rate: 0.000250
+Epoch 46/200 - Total Time: 318.80 seconds
+  Load Time: 16.63 seconds (5.22%)
+  Transfer Time: 9.91 seconds (3.11%)
+  Runtime (model training): 292.26 seconds (91.67%)
+  Average Running Loss: 0.0836
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0834
+-----> Epoch# 47, Learning Rate: 0.000063
+Epoch 47/200 - Total Time: 316.73 seconds
+  Load Time: 15.84 seconds (5.00%)
+  Transfer Time: 10.31 seconds (3.25%)
+  Runtime (model training): 290.58 seconds (91.75%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 48, Learning Rate: 0.000063
+Epoch 48/200 - Total Time: 317.94 seconds
+  Load Time: 16.63 seconds (5.23%)
+  Transfer Time: 10.33 seconds (3.25%)
+  Runtime (model training): 290.98 seconds (91.52%)
+  Average Running Loss: 0.0834
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 49, Learning Rate: 0.000063
+Epoch 49/200 - Total Time: 322.24 seconds
+  Load Time: 16.70 seconds (5.18%)
+  Transfer Time: 10.13 seconds (3.14%)
+  Runtime (model training): 295.41 seconds (91.67%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+-----> Epoch# 50, Learning Rate: 0.000063
+Epoch 50/200 - Total Time: 322.44 seconds
+  Load Time: 17.83 seconds (5.53%)
+  Transfer Time: 10.21 seconds (3.17%)
+  Runtime (model training): 294.41 seconds (91.31%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0828
+-----> Epoch# 51, Learning Rate: 0.000063
+Epoch 51/200 - Total Time: 321.58 seconds
+  Load Time: 16.62 seconds (5.17%)
+  Transfer Time: 10.35 seconds (3.22%)
+  Runtime (model training): 294.60 seconds (91.61%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 52, Learning Rate: 0.000063
+Epoch 52/200 - Total Time: 321.54 seconds
+  Load Time: 16.30 seconds (5.07%)
+  Transfer Time: 10.42 seconds (3.24%)
+  Runtime (model training): 294.82 seconds (91.69%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 53, Learning Rate: 0.000063
+Epoch 53/200 - Total Time: 320.16 seconds
+  Load Time: 15.80 seconds (4.94%)
+  Transfer Time: 10.25 seconds (3.20%)
+  Runtime (model training): 294.11 seconds (91.86%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 54, Learning Rate: 0.000063
+Epoch 54/200 - Total Time: 319.85 seconds
+  Load Time: 16.18 seconds (5.06%)
+  Transfer Time: 10.28 seconds (3.22%)
+  Runtime (model training): 293.40 seconds (91.73%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+-----> Epoch# 55, Learning Rate: 0.000063
+Epoch 55/200 - Total Time: 316.00 seconds
+  Load Time: 16.87 seconds (5.34%)
+  Transfer Time: 10.31 seconds (3.26%)
+  Runtime (model training): 288.82 seconds (91.40%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0829
+-----> Epoch# 56, Learning Rate: 0.000063
+Epoch 56/200 - Total Time: 318.20 seconds
+  Load Time: 15.77 seconds (4.96%)
+  Transfer Time: 10.41 seconds (3.27%)
+  Runtime (model training): 292.02 seconds (91.77%)
+  Average Running Loss: 0.0833
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+-----> Epoch# 57, Learning Rate: 0.000063
+Epoch 57/200 - Total Time: 322.10 seconds
+  Load Time: 16.48 seconds (5.12%)
+  Transfer Time: 10.34 seconds (3.21%)
+  Runtime (model training): 295.28 seconds (91.67%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 58, Learning Rate: 0.000063
+Epoch 58/200 - Total Time: 318.86 seconds
+  Load Time: 16.61 seconds (5.21%)
+  Transfer Time: 10.12 seconds (3.17%)
+  Runtime (model training): 292.13 seconds (91.62%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 59, Learning Rate: 0.000016
+Epoch 59/200 - Total Time: 318.31 seconds
+  Load Time: 15.70 seconds (4.93%)
+  Transfer Time: 10.18 seconds (3.20%)
+  Runtime (model training): 292.43 seconds (91.87%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0824
+-----> Epoch# 60, Learning Rate: 0.000016
+Epoch 60/200 - Total Time: 321.89 seconds
+  Load Time: 16.44 seconds (5.11%)
+  Transfer Time: 10.46 seconds (3.25%)
+  Runtime (model training): 294.99 seconds (91.64%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 61, Learning Rate: 0.000016
+Epoch 61/200 - Total Time: 321.03 seconds
+  Load Time: 17.41 seconds (5.42%)
+  Transfer Time: 10.39 seconds (3.24%)
+  Runtime (model training): 293.24 seconds (91.34%)
+  Average Running Loss: 0.0831
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+-----> Epoch# 62, Learning Rate: 0.000016
+Epoch 62/200 - Total Time: 318.79 seconds
+  Load Time: 16.79 seconds (5.27%)
+  Transfer Time: 10.31 seconds (3.23%)
+  Runtime (model training): 291.70 seconds (91.50%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 63, Learning Rate: 0.000016
+Epoch 63/200 - Total Time: 317.52 seconds
+  Load Time: 16.30 seconds (5.13%)
+  Transfer Time: 10.37 seconds (3.26%)
+  Runtime (model training): 290.85 seconds (91.60%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 64, Learning Rate: 0.000016
+Epoch 64/200 - Total Time: 320.78 seconds
+  Load Time: 15.40 seconds (4.80%)
+  Transfer Time: 10.38 seconds (3.24%)
+  Runtime (model training): 295.00 seconds (91.96%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+-----> Epoch# 65, Learning Rate: 0.000016
+Epoch 65/200 - Total Time: 320.59 seconds
+  Load Time: 15.84 seconds (4.94%)
+  Transfer Time: 10.19 seconds (3.18%)
+  Runtime (model training): 294.56 seconds (91.88%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0827
+-----> Epoch# 66, Learning Rate: 0.000016
+Epoch 66/200 - Total Time: 318.17 seconds
+  Load Time: 16.25 seconds (5.11%)
+  Transfer Time: 10.23 seconds (3.22%)
+  Runtime (model training): 291.69 seconds (91.68%)
+  Average Running Loss: 0.0831
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 67, Learning Rate: 0.000016
+Epoch 67/200 - Total Time: 324.94 seconds
+  Load Time: 16.03 seconds (4.93%)
+  Transfer Time: 10.43 seconds (3.21%)
+  Runtime (model training): 298.49 seconds (91.86%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 68, Learning Rate: 0.000016
+Epoch 68/200 - Total Time: 321.22 seconds
+  Load Time: 16.68 seconds (5.19%)
+  Transfer Time: 10.71 seconds (3.33%)
+  Runtime (model training): 293.83 seconds (91.47%)
+  Average Running Loss: 0.0832
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0825
+-----> Epoch# 69, Learning Rate: 0.000016
+Epoch 69/200 - Total Time: 325.72 seconds
+  Load Time: 16.54 seconds (5.08%)
+  Transfer Time: 10.79 seconds (3.31%)
+  Runtime (model training): 298.40 seconds (91.61%)
+  Average Running Loss: 0.0831
+CUDA Memory Allocated: 0.05 GB
+--> Validation loss: 0.0826
+Learning rate reduced below minimum
+--> Test loss: 0.0827
